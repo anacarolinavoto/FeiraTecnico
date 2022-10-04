@@ -1,0 +1,16 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+#logo{
+    width: 100px;
+    float: right;
+}
+
+nav{
+    margin-top: 20px;
+}
