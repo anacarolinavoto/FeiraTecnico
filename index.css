@@ -3,14 +3,14 @@ main{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 12.5rem;
 }
 
 #logo{
-    width: 100px;
+    width: 6.25rem;
     float: right;
 }
 
 nav{
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
