@@ -155,7 +155,7 @@
     
     <ul class="menu-bar">
         <li><a href="index.php" class="menu-button">Início</a></li>
-        <li><a href="#">Bebidas</a></li>
+        <li><a href="./bebidas.php">Bebidas</a></li>
         <li><a href="#">Alimentos</a></li>
         <li><a href="#">Padaria</a></li>
         <li><a href="#">Cereais e grãos</a></li>
