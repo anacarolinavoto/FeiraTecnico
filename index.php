@@ -174,7 +174,7 @@
 </nav>
    </header>
 
-   <main>
+   <main id="inicio">
     <div>
    <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="O que deseja achar?" aria-label="Pesquisar">
