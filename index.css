@@ -1,4 +1,4 @@
-main{
+#inicio{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,25 @@ nav{
     margin-top: 1.25rem;
 }
 
-#coca{
+.imagem-produto{
     height: 10rem;
     width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#produto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;  
+}
+
+button{
+    background-color: #03bb85;
+    color: #ffff;
+    border-style: none;
+    width: 20rem;
+    border-radius: 2rem;
 }
