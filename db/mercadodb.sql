@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Out-2022 às 15:08
+-- Tempo de geração: 24-Out-2022 às 13:49
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categoria` (
-  `CategoriaID` int(10) UNSIGNED NOT NULL,
+  `CategoriaID` INTEGER PRIMARY KEY AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -46,6 +46,24 @@ INSERT INTO `categoria` (`CategoriaID`, `nome`) VALUES
 (7, 'Limpeza'),
 (8, 'Higiene Pessoal'),
 (9, 'Papelaria');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produtos`
+--
+
+CREATE TABLE `produtos` (
+  `ProdutoID` INTEGER PRIMARY KEY AUTO_INCREMENT,
+  `Nome` varchar(150) NOT NULL DEFAULT '',
+  `Descricao` varchar(500) NOT NULL DEFAULT '',
+  `Preco` varchar(15) NOT NULL DEFAULT '',
+  `Prateleira` varchar(3) NOT NULL DEFAULT '',
+  `Corredor` varchar(5) NOT NULL DEFAULT '',
+  `Imagem` varchar(200) NOT NULL DEFAULT '',
+  `Ativo` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
+  `CategoriaID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -71,10 +89,10 @@ INSERT INTO `usuarios` (`UsuarioID`, `Nome`, `Senha`) VALUES
 --
 
 --
--- Índices para tabela `categoria`
+-- Índices para tabela `produtos`
 --
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`CategoriaID`);
+ALTER TABLE `produtos`
+  ADD KEY `CategoriaID` (`CategoriaID`);
 
 --
 -- Índices para tabela `usuarios`
@@ -87,16 +105,20 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de tabela `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `CategoriaID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `UsuarioID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`CategoriaID`) REFERENCES `categoria` (`CategoriaID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
