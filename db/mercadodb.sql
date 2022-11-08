@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Nov-2022 às 12:49
+-- Tempo de geração: 08-Nov-2022 às 16:08
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -89,7 +89,16 @@ INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `Preco`, `Prateleira`,
 (17, 'Semente de Chia Ceifeiro - 100g', 'Semente de Chia Ceifeiro - 100g', '23,00', 'B', '1', 'chia.png', 1, 4),
 (18, 'FARINHA DE CENTEIO INTEGRAL VITAO 500G', 'FARINHA DE CENTEIO INTEGRAL VITAO 500G', '7,00', 'C', '1', 'farinha.png', 1, 4),
 (19, 'Arroz Agulhinha Tipo 1 CAMIL Pacote 1kg', 'Arroz Agulhinha Tipo 1 CAMIL Pacote 1kg', '21,99', 'A', '1', 'arroz.png', 1, 4),
-(20, 'Trigo em Grão Grings 500g', 'Trigo em Grão Grings 500g', '7,50', 'B', '1', 'trigo.png', 1, 4);
+(20, 'Trigo em Grão Grings 500g', 'Trigo em Grão Grings 500g', '7,50', 'B', '1', 'trigo.png', 1, 4),
+(21, 'Pão Doce', 'Pão Doce', '12,90', 'E', '2', 'paodoce.png', 1, 3),
+(22, 'Pão Francês - Cesta', 'Cesta de pães franceses', '8,90', 'E', '2', 'paofrances.png', 1, 3),
+(23, 'Pão de Forma Visconti Tradicional - Pacote com 400g', 'Pão de Forma Visconti Tradicional - Pacote com 400g', '4,99', 'G', '2', 'paodeforma.png', 1, 3),
+(24, 'Quindim', 'Quindim', '3,90', 'H', '2', 'quindin.png', 1, 3),
+(25, 'Torta de Limão', 'Torta de Limão', '30,00', 'B', '3', 'tortadelimao.png', 1, 3),
+(26, 'Coxinha', 'Coxinha', '4,99', 'C', '3', 'coxinha.png', 1, 3),
+(27, 'Bolinha de Queijo - KG', 'Bolinha de Queijo', '34,90', 'D', '3', 'bolinhadequeijo.png', 1, 3),
+(28, 'Croquete', 'Croquete', '3,50', 'G', '2', 'croquete.png', 1, 3),
+(29, 'Sanduíche Natural', 'Sanduíche Natural', '7,90', 'C', '3', 'sanduichenatural.png', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -147,7 +156,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
