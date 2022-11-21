@@ -149,7 +149,7 @@
     <div class="col-sm">
     <ul class="menu">
       
-      <li title="home"><a href="#" class="menu-button home">menu</a></li>
+      <li title="home"><a href="#" class="menu-button home">Menu</a></li>
       
     </ul>
     
