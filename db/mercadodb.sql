@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Nov-2022 às 16:08
+-- Tempo de geração: 21-Nov-2022 às 13:07
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -98,7 +98,17 @@ INSERT INTO `produtos` (`ProdutoID`, `Nome`, `Descricao`, `Preco`, `Prateleira`,
 (26, 'Coxinha', 'Coxinha', '4,99', 'C', '3', 'coxinha.png', 1, 3),
 (27, 'Bolinha de Queijo - KG', 'Bolinha de Queijo', '34,90', 'D', '3', 'bolinhadequeijo.png', 1, 3),
 (28, 'Croquete', 'Croquete', '3,50', 'G', '2', 'croquete.png', 1, 3),
-(29, 'Sanduíche Natural', 'Sanduíche Natural', '7,90', 'C', '3', 'sanduichenatural.png', 1, 3);
+(29, 'Sanduíche Natural', 'Sanduíche Natural', '7,90', 'C', '3', 'sanduichenatural.png', 1, 3),
+(34, 'Álcool ', 'ÁLCOOL ETÍLICO HIDRATADO 70% 70 INPM PROLINK', '8,15', 'F', '9', 'alcool.png', 1, 7),
+(35, 'Detergente', 'Detergente Líquido Neutro Ypê 500ml', '10,00', 'A', '9', 'detergente.png', 0, 7),
+(36, 'Sabão', 'SABÃO BARRA NEUTRO C/ 5UN (1KG) - YPE', '3,00', 'A', '9', 'sabao.png', 1, 7),
+(37, 'Sabão de coco', 'SABÃO DE COCO BARRA 500G', '3,40', 'A', '9', 'sabaococo.png', 1, 7),
+(38, 'Limpa Vidros', 'Facilita Limpa Vidros - AudaxCo', '15,30', 'E', '9', 'limpavidros.png', 1, 7),
+(39, 'Luva de Borracha', 'Luva de borracha amarela ', '5,99', 'E', '9', 'luva.png', 1, 7),
+(40, 'Desinfetante', 'Desinfetantes Química', '15,20', 'F', '9', 'desinfetante.png', 1, 7),
+(41, 'Pano de Chão', 'Pano de chão xadrez', '6,60', 'E', '9', 'pano.png', 1, 7),
+(42, 'Balde', 'Balde azul', '5,90', 'E', '9', 'balde.png', 1, 7),
+(43, 'Esponja', 'Esponja amarela bom bril avulsa ', '2,40', 'E', '9', 'esponja.png', 1, 7);
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
