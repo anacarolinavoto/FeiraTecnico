@@ -1,3 +1,7 @@
+<?php
+include_once './includes/_banco.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,56 +180,36 @@
 
 <div class="mb-12" style="width: 1000px;">
   
-<div class="card mb-3" style="max-width: 800px;">
+<?php 
+ 
+   $sql = "SELECT * from produtos where CategoriaID = 1";
+
+   $exec = mysqli_query($conn, $sql);
+
+   $numProdutos = mysqli_num_rows($exec);
+ 
+   while ($dados = mysqli_fetch_assoc($exec)){
+   ?>
+   <div class="card mb-3" style="max-width: 800px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <img class="imagem-produto" src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/1844-refrigerante-coca-cola-600ml.jpg" alt="...">
+      <img class="imagem-produto" src="./contents/<?php echo $dados['Imagem'];?>" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-      <h5 class="card-title">Coca-Cola</h5>
-        <p class="card-text">Corredor 5 prateleira 3</p>
-        <p class="card-text"><small class="text-muted">Abastecido por último às 14h</small></p>
+      <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
+        <p class="card-text"><?php echo $dados['Corredor'];?></p>
+        <p class="card-text"><?php echo $dados['Prateleira'];?></p>
         <button>Ver Localização</button>
       </div>
     </div>
   </div>
 </div>
 
+   <?php
+   }
+   ?> 
 
-<div class="card mb-3" style="max-width: 800px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img class="imagem-produto" src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/1844-refrigerante-coca-cola-600ml.jpg" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Coca-Cola</h5>
-        <p class="card-text">Corredor 5 prateleira 3</p>
-        <p class="card-text"><small class="text-muted">Abastecido por último às 14h</small></p>
-        <button>Ver Localização</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="card mb-3" style="max-width: 800px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img class="imagem-produto" src="https://www.imigrantesbebidas.com.br/bebida/images/products/full/1844-refrigerante-coca-cola-600ml.jpg" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-      <h5 class="card-title">Coca-Cola</h5>
-        <p class="card-text">Corredor 5 prateleira 3</p>
-        <p class="card-text"><small class="text-muted">Abastecido por último às 14h</small></p>
-        <button>Ver Localização</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 </main>
 
@@ -249,3 +233,6 @@
 
 </body>
 </html>
+<?php
+mysqli_close($conn);
+?>
