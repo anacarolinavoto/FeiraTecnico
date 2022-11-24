@@ -1,16 +1,8 @@
 <?php
 include_once './includes/_banco.php';
-?>
+include_once './includes/_head.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
-    <title>Document</title>
+?>
 
     <style>
     @import url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
@@ -147,55 +139,34 @@ include_once './includes/_banco.php';
   
 <body>
 
-<header>
-    <nav>
-   <div class="container">
-  <div class="row">
-    <div class="col-sm">
-    <ul class="menu">
-      
-      <li title="home"><a href="#" class="menu-button home">menu</a></li>
-      
-    </ul>
-    
-    <ul class="menu-bar">
-        <li><a href="index.php" class="menu-button">Início</a></li>
+<?php
+
+include_once './includes/_menu.php'
+?>
 
 
 
-        <?php 
-        $sql = "SELECT * from categoria ";
-        $exec = mysqli_query($conn, $sql);
-        $numProdutos = mysqli_num_rows($exec);
-        while ($dados = mysqli_fetch_assoc($exec)){
-        ?>
-        
-        <li><a href="./categoria.php?id=<?php echo $dados['CategoriaID']?>"><?php echo $dados['nome']?></a></li>
-        <?php
-        }
-        ?>
-        
-     </ul>
-    </div>
-  </div>
-</div>
-</nav>
-   </header>
 
 <main id="produto">
 
 <div class="mb-12" style="width: 1000px;">
   
-<?php 
+<?php
+   
  
-   $sql = "SELECT * from produtos where CategoriaID = 1";
+   $sql = "SELECT * from produtos where CategoriaID = 4";
 
    $exec = mysqli_query($conn, $sql);
 
    $numProdutos = mysqli_num_rows($exec);
  
    while ($dados = mysqli_fetch_assoc($exec)){
-   ?>
+
+
+  
+           
+     ?>
+
    <div class="card mb-3" style="max-width: 800px;">
   <div class="row no-gutters">
     <div class="col-md-4">
@@ -206,7 +177,7 @@ include_once './includes/_banco.php';
       <h5 class="card-title"><?php echo $dados['Nome'];?></h5>
         <p class="card-text"><?php echo $dados['Corredor'];?></p>
         <p class="card-text"><?php echo $dados['Prateleira'];?></p>
-        <button href="">Ver Localização</button>
+        <button>Ver Localização</button>
       </div>
     </div>
   </div>
@@ -214,6 +185,8 @@ include_once './includes/_banco.php';
 
    <?php
    }
+  
+  
    ?> 
 
 

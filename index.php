@@ -1,3 +1,7 @@
+
+<?php
+include_once './includes/_banco.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -173,27 +177,56 @@
 </div>
 </nav>
    </header>
+   
 
-   <main id="inicio">
-    <div>
-   <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="O que deseja achar?" aria-label="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="./contents/searchicon.png" id="searchicon" style="width: 25px;"></button>
-    </form>
-    </div>
-   </main>
+   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="O que procuras?">
 
+<?php 
+        $sql = "SELECT Nome from produtos";
+        $exec = mysqli_query($conn, $sql);
+        $numProdutos = mysqli_num_rows($exec);
+        while ($dados = mysqli_fetch_assoc($exec)){
+        ?>
 
+    <ul id="myUL">
+    <li>
+      <a href="./categoria.php?id=<?php echo $dados['produtos']?>"><?php echo $dados['Nome']?></a>
+    </li>
+    </ul>
 
+    <?php
+        }
+    ?>
 
+<script>
+function myFunction() {
+
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-   
+    <script type="text/javascript" src="js/meu-arquivo.js"></script>
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    
     <script id="rendered-js" >
       $(document).ready(function () {
         $(".menu-button").click(function () {

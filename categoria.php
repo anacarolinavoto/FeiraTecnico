@@ -1,3 +1,4 @@
+
 <?php
 include_once './includes/_banco.php';
 ?>
@@ -169,7 +170,6 @@ include_once './includes/_banco.php';
         $numProdutos = mysqli_num_rows($exec);
         while ($dados = mysqli_fetch_assoc($exec)){
         ?>
-        
         <li><a href="./categoria.php?id=<?php echo $dados['CategoriaID']?>"><?php echo $dados['nome']?></a></li>
         <?php
         }
@@ -187,8 +187,8 @@ include_once './includes/_banco.php';
 <div class="mb-12" style="width: 1000px;">
   
 <?php 
- 
-   $sql = "SELECT * from produtos where CategoriaID = 1";
+  $categoria= $_GET['id'];
+   $sql = "SELECT * from produtos where CategoriaID = {$categoria}";
 
    $exec = mysqli_query($conn, $sql);
 
